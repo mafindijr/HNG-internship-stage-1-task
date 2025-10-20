@@ -10,7 +10,7 @@
 <body>
     <header data-testid="contct-head">
         <ul class="nav">
-            <li><a href="#">Home</a></li>
+            <li><a href="profile-card.html">Home</a></li>
             <li><a href="#">About Us</a></li>
             <li><a href="contact-page.html">Contact Us</a></li>
         </ul>
@@ -19,10 +19,16 @@
     <main>
         <form action="get">
             <label for="fullName">
-                <input type="text" data-testid="contct-fullname">
+                <input type="text" name="fullName" data-testid="contct-fullname">
             </label>
             <label for="email">
-                <input type="email" data-testid="contact-email">
+                <input type="email" name="email" data-testid="contact-email">
+            </label>
+            <label for="message">
+                <textarea name="message" id="message" data-testid="contact-message"></textarea>
+            </label>
+            <label for="submitButton">
+                <button class="submitBtn" data-testid="contact-submitBtn">Submit</button>
             </label>
         </form>
     </main>
