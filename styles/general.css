@@ -22,7 +22,28 @@ header {
     left: 0;
     right: 0;
     display: flex;
+    padding: 10px 80px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(114, 11, 11);
+}
+
+.nav {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    align-items: center;
+}
+
+.nav li a {
+    display: flex;
+    text-decoration: none;
+    align-items: center;
     gap: 8px;
-    justify-content: space-around;
-    background-color: rgb(114, 11, 11);;
+    color: white;
+    justify-content: space-between;
+}
+
+.nav li a:hover {
+    color: darkgray;
 }
