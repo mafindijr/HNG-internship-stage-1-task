@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles/contact-page.css">
 </head>
 <body>
-    <header data-testid="contct-head">
+    <header data-testid="test-contct-head">
         <ul class="nav">
             <li><a href="profile-card.html">Home</a></li>
             <li><a href="#">About Us</a></li>
@@ -19,16 +19,23 @@
     <main>
         <form action="get">
             <label for="fullName">
-                <input type="text" name="fullName" data-testid="contct-fullname">
+                Full Name
+                <input type="text" name="fullName" data-testid="test-contct-fullname">
             </label>
             <label for="email">
-                <input type="email" name="email" data-testid="contact-email">
+                Enter Email
+                <input type="email" name="email" data-testid="test-contact-email">
+            </label>
+            <label for="subject">
+                Subject
+                <input name="subject"  data-testid="text-subject-message">
             </label>
             <label for="message">
-                <textarea name="message" id="message" data-testid="contact-message"></textarea>
+                Send a Message
+                <textarea name="message" id="message" data-testid="test-contact-message"></textarea>
             </label>
             <label for="submitButton">
-                <button class="submitBtn" data-testid="contact-submitBtn">Submit</button>
+                <button class="submitBtn" data-testid="test-contact-submitBtn">Submit</button>
             </label>
         </form>
     </main>
