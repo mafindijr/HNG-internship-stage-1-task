@@ -67,3 +67,58 @@ h1 {
     color: rgb(114, 11, 11);
     font-weight: bold;
 }
+
+
+
+/* Center main container */
+.contact-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 24px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+/* Responsive navigation */
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.nav li a:hover,
+.nav li a:focus {
+    background: #f0f0f0;
+}
+
+/* Responsive styles */
+@media (max-width: 700px) {
+    .contact-container {
+        max-width: 98vw;
+        margin: 16px auto;
+        padding: 12px;
+    }
+    .nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+    .nav li a {
+        width: 100vw;
+        text-align: center;
+        padding: 12px 0;
+    }
+}
