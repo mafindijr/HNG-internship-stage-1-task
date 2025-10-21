@@ -19,23 +19,23 @@
     <main>
         <form action="get">
             <label for="fullName">
-                Full Name
-                <input type="text" name="fullName" data-testid="test-contct-fullname">
+                Full Name*
+                <input type="text" id="fullName" data-testid="test-contct-fullname" required>
             </label>
             <label for="email">
-                Enter Email
-                <input type="email" name="email" data-testid="test-contact-email">
+                Enter Email*
+                <input type="email" id="email" data-testid="test-contact-email" required>
             </label>
             <label for="subject">
-                Subject
-                <input name="subject"  data-testid="text-subject-message">
+                Subject*
+                <input id="subject"  data-testid="text-subject-message" required>
             </label>
             <label for="message">
-                Send a Message
-                <textarea name="message" id="message" data-testid="test-contact-message"></textarea>
+                Send a Message*
+                <textarea name="message" id="message" data-testid="test-contact-message" required></textarea>
             </label>
             <label for="submitButton">
-                <button class="submitBtn" data-testid="test-contact-submitBtn">Submit</button>
+                <button class="submitBtn" id="submitButton" data-testid="test-contact-submitBtn">Submit</button>
             </label>
         </form>
     </main>
