@@ -48,6 +48,19 @@
         </form>
     </main>
 
+    <script>
+        const email = document.getElementById('email');
+
+        email.addEventListener('input', 
+            (event) => {
+                if (email.validity.typeMismatch) {
+                    email.setCustomValidity("this is not a valid mail address!");
+                } else {
+                    email.setCustomValidity("");
+                }
+            }
+        )
+    </script>
 
 </body>
 </html>
