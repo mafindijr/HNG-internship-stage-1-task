@@ -111,3 +111,28 @@ hr {
     align-items: center;
     margin-top: 8px;
 }
+
+@media (max-width: 700px) {
+    .about-container {
+        max-width: 98vw;
+        margin: 16px auto;
+        padding: 12px;
+    }
+    header .nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+    header .nav li a {
+        width: 100vw;
+        text-align: center;
+        padding: 12px 0;
+        cursor: pointer;
+    }
+
+    header .nav li a:hover,
+    header .nav li a:focus {
+        background: darkgray;
+        color: white;
+    }
+}

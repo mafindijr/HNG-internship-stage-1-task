@@ -76,11 +76,12 @@ h2 {
     margin-left: 18px;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 700px) {
     .about-container {
         max-width: 98vw;
         margin: 16px auto;
         padding: 12px;
+        margin-top: 100px;
     }
     header .nav {
         flex-direction: column;
