@@ -6,20 +6,6 @@
     <title>Contact Us</title>
     <link rel="stylesheet" href="styles/general.css">
     <link rel="stylesheet" href="styles/contact-page.css">
-    <style>
-        /* Added minimal styles for error display and invalid inputs */
-        .error {
-            color: #b00020;
-            display: block;
-            margin-top: 8px;
-            font-size: 0.95rem;
-        }
-        .invalid {
-            outline: none;
-            border: 1px solid #b00020;
-            box-shadow: 0 0 0 3px rgba(176,0,32,0.08);
-        }
-    </style>
 </head>
 <body>
     <header data-testid="test-contact-head">
@@ -31,43 +17,42 @@
     </header>
 
     <main class="contact-container">
-
             <h1>Contact Us</h1>
 
-        <!-- add novalidate so we can show custom errors inside the span.error -->
-        <form action="submit" class="form-data" novalidate>
+        <!-- add novalidate so we can show custom errors inside the span.error as learned from the resource shared -->
+        <form action="submit" data-testid="test-contact-form" class="form-data" novalidate>
             <label for="fullName">
-                Full Name*
 
                 <input type="text" id="fullName" placeholder="Enter Full Name" data-testid="test-contct-fullname" required>
+                <span class="error" aria-live="polite"></span>
             </label>
             <label for="email">
                 Enter Email*
 
                 <input type="email" id="email" placeholder="Enter Email" data-testid="test-contact-email" required>
+                <span class="error" aria-live="polite"></span>
             </label>
             <label for="subject">
                 Subject*
 
                 <input type="text" id="subject" placeholder="Enter Subject"  data-testid="text-subject-message" required>
+                <span class="error" aria-live="polite"></span>
             </label>
             <label for="message">
                 Send a Message*
 
                 <br>
                 <textarea name="message" id="message" placeholder="Send Message " data-testid="test-contact-message" required></textarea>
+                <span class="error" aria-live="polite"></spa
             </label>
             <label for="submitButton">
                 <button class="submitBtn" id="submitButton" data-testid="test-contact-submitBtn">Submit</button>
-                <!-- existing single span.error is used to show all validation messages -->
-                <span class="error" aria-live="polite"></span>
             </label>
         </form>
     </main>
 
     <script>
         const form = document.querySelector('.form-data');
-        const spanError = form.querySelector('.error');
         const fields = [
             { el: document.getElementById('fullName'), name: 'Full Name' },
             { el: document.getElementById('email'), name: 'Email' },
@@ -75,28 +60,24 @@
             { el: document.getElementById('message'), name: 'Message' }
         ];
 
-        // Reset form on page load
-        window.addEventListener('load', () => {
-            form.reset();
-        });
-
         form.addEventListener('submit', function (e) {
             e.preventDefault(); // Prevent default submission
 
             // Clear previous errors
-            spanError.innerHTML = '';
             fields.forEach(f => {
                 f.el.classList.remove('invalid');
+                const errorSpan = f.el.nextElementSibling; // Get the corresponding error span
+                errorSpan.innerHTML = ''; // Clear error message
             });
 
             let hasErrors = false;
-            const messages = [];
 
             // Validate each field
             fields.forEach(f => {
+                const errorSpan = f.el.nextElementSibling; // Get the corresponding error span
                 if (!f.el.value.trim()) {
                     hasErrors = true;
-                    messages.push(`${f.name} is required`);
+                    errorSpan.innerHTML = `${f.name} is required`; // Set error message
                     f.el.classList.add('invalid');
                 }
             });
@@ -105,14 +86,13 @@
             const emailField = fields.find(f => f.name === 'Email').el;
             if (emailField.value.trim() && !emailField.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
                 hasErrors = true;
-                messages.push('Please enter a valid email address');
+                const errorSpan = emailField.nextElementSibling; // Get the corresponding error span
+                errorSpan.innerHTML = 'Please enter a valid email address'; // Set error message
                 emailField.classList.add('invalid');
             }
 
             if (hasErrors) {
-                // Display all error messages
-                spanError.innerHTML = messages.map(msg => `<div>${msg}</div>`).join('');
-                return false;
+                return false; // Prevent submission if there are errors
             }
 
             // If validation passes
@@ -124,9 +104,10 @@
         // Clear error message when user starts typing
         fields.forEach(field => {
             field.el.addEventListener('input', () => {
+                const errorSpan = field.el.nextElementSibling; // Get the corresponding error span
                 if (field.el.classList.contains('invalid')) {
                     field.el.classList.remove('invalid');
-                    spanError.innerHTML = '';
+                    errorSpan.innerHTML = ''; // Clear error message
                 }
             });
         });

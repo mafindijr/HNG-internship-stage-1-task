@@ -8,7 +8,10 @@
     background-color: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 400px;
+    /* width: 400px; */
+    max-width: 600px;
+    margin: 80px auto;
+    padding: 24px;
     overflow: hidden;
 }
 
@@ -71,16 +74,16 @@ h1 {
 
 
 /* Center main container */
-.contact-container {
+/* .contact-container {
     max-width: 600px;
     margin: 40px auto;
     padding: 24px;
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-}
+} */
 
-/* Responsive navigation */
+
 .nav {
     display: flex;
     justify-content: center;
@@ -92,7 +95,7 @@ h1 {
 
 .nav li a {
     text-decoration: none;
-    color: #333;
+    color: white;
     font-weight: 500;
     padding: 8px 16px;
     border-radius: 4px;
@@ -101,11 +104,24 @@ h1 {
 
 .nav li a:hover,
 .nav li a:focus {
-    background: #f0f0f0;
+    background: darkgray;
+    color: white;
+}
+
+.error {
+    color: #b00020;
+    display: block;
+    margin-top: 8px;
+    font-size: 0.95rem;
+}
+.invalid {
+    outline: none;
+    border: 1px solid #b00020;
+    box-shadow: 0 0 0 3px rgba(176,0,32,0.08);
 }
 
 /* Responsive styles */
-@media (max-width: 700px) {
+@media (max-width: 400px) {
     .contact-container {
         max-width: 98vw;
         margin: 16px auto;
@@ -120,5 +136,6 @@ h1 {
         width: 100vw;
         text-align: center;
         padding: 12px 0;
+        
     }
 }
