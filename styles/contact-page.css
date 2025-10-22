@@ -31,6 +31,7 @@ input {
     border: 1px solid darkgray;
     width: 100%;
     box-sizing: border-box;
+    margin-top: 8px;
 }
 
 label {
