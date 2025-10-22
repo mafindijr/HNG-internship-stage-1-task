@@ -2,28 +2,35 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 20px;
+    padding: 24px;
     align-items: center;
     justify-content: center;
     background-color: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 600px;
+    /* width: 600px; */
+    max-width: 700px;
+    margin: 80px auto;
     overflow: hidden;
+    text-align: justify;
 }
 
 
-/* Center main container */
-.about-container {
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 24px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+section {
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
 }
 
-.nav {
+section p {
+    font-size: 1rem;
+    color: darkslategrey;
+    line-height: 1.6;
+    margin-left: 8px;
+}
+
+header .nav {
     display: flex;
     justify-content: center;
     gap: 32px;
@@ -32,19 +39,41 @@
     margin: 0;
 }
 
-.nav li a {
+header .nav li a {
     text-decoration: none;
-    color: #333;
+    color: #ffffff;
     font-weight: 500;
     padding: 8px 16px;
     border-radius: 4px;
     transition: background 0.2s;
+    text-align: justify;
 }
 
-.nav li a:hover,
-.nav li a:focus {
+header .nav li a:hover,
+header .nav li a:focus {
     background: darkgray;
     color: white;
+}
+
+h1, h2 {
+    color: rgb(114, 11, 11);
+    margin: 8px;
+}
+
+h2 {
+    text-align: start;
+}
+
+.about-goal .goalText {
+    text-align: left;
+
+}
+
+.about-goal ul li {
+    padding: 4px 0;
+    list-style-type: disc;
+    color: darkslategrey;
+    margin-left: 18px;
 }
 
 @media (max-width: 400px) {
@@ -53,12 +82,12 @@
         margin: 16px auto;
         padding: 12px;
     }
-    .nav {
+    header .nav {
         flex-direction: column;
         align-items: center;
         gap: 12px;
     }
-    .nav li a {
+    header .nav li a {
         width: 100vw;
         text-align: center;
         padding: 12px 0;

@@ -28,7 +28,7 @@ header {
     background-color: rgb(114, 11, 11);
 }
 
-.nav {
+/* .nav {
     display: flex;
     gap: 40px;
     list-style: none;
@@ -46,4 +46,30 @@ header {
 
 .nav li a:hover {
     color: darkgray;
+} */
+
+
+header .nav {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header .nav li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background 0.2s;
+    text-align: justify;
+}
+
+header .nav li a:hover,
+header .nav li a:focus {
+    background: darkgray;
+    color: white;
 }
