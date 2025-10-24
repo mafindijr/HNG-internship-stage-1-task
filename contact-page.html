@@ -18,33 +18,33 @@
     </header>
 
     <main class="contact-container">
-            <h1>Contact Us</h1>
+            <h1 data-testid="test-contact-headText">Contact Us</h1>
 
         <!-- add novalidate so we can show custom errors inside the span.error as learned from the resource shared -->
         <form action="submit" data-testid="test-contact-form" class="form-data" novalidate>
             <label for="fullName">
                 Full Name*
                 <input type="text" id="fullName" placeholder="Enter Full Name" data-testid="test-contct-fullname" required>
-                <span class="error" aria-live="polite"></span>
+                <span data-testid="test-contact-error-name" class="error" aria-live="polite"></span>
             </label>
             <label for="email">
                 Enter Email*
 
                 <input type="email" id="email" placeholder="Enter Email" data-testid="test-contact-email" required>
-                <span class="error" aria-live="polite"></span>
+                <span class="error" data-testid="test-contact-error-email" aria-live="polite"></span>
             </label>
             <label for="subject">
                 Subject*
 
                 <input type="text" id="subject" placeholder="Enter Subject"  data-testid="text-subject-message" required>
-                <span class="error" aria-live="polite"></span>
+                <span class="error" data-testid="test-contact-error-subject" aria-live="polite"></span>
             </label>
             <label for="message">
                 Send a Message*
 
                 <br>
                 <textarea name="message" id="message" placeholder="Send Message " data-testid="test-contact-message" required></textarea>
-                <span class="error" aria-live="polite"></span>
+                <span class="error" data-testid="test-contact-error-message" aria-live="polite"></span>
             </label>
             <label for="submitButton">
                 <button class="submitBtn" id="submitButton" data-testid="test-contact-submitBtn">Submit</button>
