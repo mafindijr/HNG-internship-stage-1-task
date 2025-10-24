@@ -45,6 +45,7 @@ textarea {
     height: 100px;
     width: 100%;
     padding: 10px 8px;
+    padding-top: 8px;
 }
 
 .submitBtn {
